@@ -27,7 +27,7 @@ import {IdentifierTypeEditorIcon, RelationshipTypeEditorIcon} from '../helpers/u
 import {PrivilegeType, checkPrivilege} from '../../common/helpers/privileges-utils';
 import {
 	faBarcode,
-	faChartLine, faClipboardQuestion, faFileLines, faGripVertical, faL, faLink, faListUl, faMoon, faNewspaper, faPlus, faQuestionCircle,
+	faChartLine, faClipboardQuestion, faFileLines, faGripVertical, faLink, faListUl, faMoon, faNewspaper, faPlus, faQuestionCircle,
 	faSearch, faShieldHalved, faSignInAlt, faSignOutAlt, faSun, faTrophy, faUserCircle, faUserGear
 } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -103,7 +103,7 @@ class Layout extends React.Component {
 	renderDocsDropdown() {
 		const {tabActive} = this.props;
 		const docsDropdownTitle = (
-			<span className={`${(tabActive === 4) ? 'active-tab-text' : ''}`}>
+			<span className={`${tabActive === 4 ? 'active-tab-text' : ''}`}>
 				<FontAwesomeIcon icon={faFileLines}/>
 				{'  Docs'}
 			</span>
@@ -112,7 +112,7 @@ class Layout extends React.Component {
 			<Nav>
 				<NavDropdown
 					alignRight
-					className={`${(tabActive === 4) ? 'active-tab' : ''}`}
+					className={`${tabActive === 4 ? 'active-tab' : ''}`}
 					id="docs-dropdown"
 					title={docsDropdownTitle}
 					onMouseDown={this.handleMouseDown}
@@ -166,7 +166,7 @@ class Layout extends React.Component {
 		);
 
 		const userDropdownTitle = user && (
-			<span className={`${(tabActive === 6) ? 'active-tab-text' : ''}`}>
+			<span className={`${tabActive === 6 ? 'active-tab-text' : ''}`}>
 				<FontAwesomeIcon icon={faUserCircle}/>
 				{`  ${user.name}`}
 			</span>
@@ -243,7 +243,7 @@ class Layout extends React.Component {
 				{showPrivilegeDropdown && privilegeDropDown}
 				<NavDropdown
 					alignRight
-					className={`${(tabActive === 5) ? 'active-tab' : ''}`}
+					className={`${tabActive === 5 ? 'active-tab' : ''}`}
 					id="create-dropdown"
 					open={this.state.menuOpen}
 					title={createDropdownTitle}
@@ -283,7 +283,7 @@ class Layout extends React.Component {
 				</NavDropdown>
 				<NavDropdown
 					alignRight
-					className={`${(tabActive === 6) ? 'active-tab' : ''}`}
+					className={`${tabActive === 6 ? 'active-tab' : ''}`}
 					id="user-dropdown"
 					title={userDropdownTitle}
 					onMouseDown={this.handleMouseDown}
@@ -475,7 +475,6 @@ Layout.defaultProps = {
 	homepage: false,
 	mergeQueue: null,
 	requiresJS: false,
-	tabActive: false,
 	user: null
 };
 
