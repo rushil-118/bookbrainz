@@ -159,7 +159,7 @@ class Layout extends React.Component {
 		const {tabActive, user} = this.props;
 
 		const createDropdownTitle = (
-			<span className={`${(tabActive === 5) ? 'active-tab-text' : ''}`}>
+			<span className={`${tabActive === 5 ? 'active-tab-text' : ''}`}>
 				<FontAwesomeIcon icon={faPlus}/>
 				{'  Add'}
 			</span>
